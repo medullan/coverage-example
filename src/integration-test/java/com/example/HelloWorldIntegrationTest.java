@@ -22,6 +22,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -39,7 +40,7 @@ public class HelloWorldIntegrationTest {
 
 	@BeforeClass
 	public static void initWebDriver() {
-		driver = new FirefoxDriver();		
+		driver = new ChromeDriver();
 	}
 	
 	@AfterClass
