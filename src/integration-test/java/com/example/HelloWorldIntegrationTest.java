@@ -21,6 +21,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+//import org.junit.runners.JUnit4;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -32,6 +33,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
+//@RunWith(JUnit4.class)
 @ContextConfiguration(locations={"file:src/main/webapp/WEB-INF/conf/applicationContext.xml"})
 public class HelloWorldIntegrationTest {
 	
@@ -40,11 +42,11 @@ public class HelloWorldIntegrationTest {
 
 	@BeforeClass
 	public static void initWebDriver() {
-		driver = new ChromeDriver();
+		driver = new FirefoxDriver();
 	}
 	
 	@AfterClass
-	public static void stopSeleniumClent() {
+	public static void stopSeleniumClient() {
 		try {
 			driver.close();
 			driver.quit();
@@ -58,7 +60,7 @@ public class HelloWorldIntegrationTest {
 	@Test
 	public void testHelloWorld() {
 		// Start from the homepage
-		driver.get("http://localhost:9080/helloworld/");
+		driver.get("http://localhost:" + System.getProperty("test.server.port") + "/helloworld/");
 		HomePage homePage = new HomePage(driver);
 		
 		HelloWorldPage helloWorldPage = homePage.clickMessageLink();

@@ -8,3 +8,5 @@
 /.tomcatplugin
 /.project
 /.#webclasspath
+/.idea
+/*.iml
