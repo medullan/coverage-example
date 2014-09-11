@@ -9,7 +9,7 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-        <jdk.version>1.7</jdk.version>
+        <jdk.version>1.6</jdk.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- all tests are run by default. -->
         <skip.integration.tests>false</skip.integration.tests>
@@ -19,6 +19,7 @@
         <jetty.version>9.2.3</jetty.version>
         <!-- <jetty.version>7.2.2.v20101205</jetty.version> -->
         <cobertura.tool.version>1.9.4.1</cobertura.tool.version>
+        <cobertura.instrumentation.phase>prepare-package</cobertura.instrumentation.phase>
     </properties>
 
     <repositories>
@@ -411,7 +412,7 @@
                         <executions>
                             <execution>
                                 <id>instrument-code</id>
-                                <phase>prepare-package</phase>
+                                <phase>${cobertura.instrumentation.phase}</phase>
                                 <goals>
                                     <goal>instrument</goal>
                                 </goals>
