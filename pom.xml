@@ -421,7 +421,7 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <!-- Add cobertura as dependency to the jetty-plugin (required for instrumented classes)
+                    <!-- Add cobertura as dependency to the jetty-plugin (required for instrumented classes) -->
                     <plugin>
                         <groupId>org.mortbay.jetty</groupId>
                         <artifactId>maven-jetty-plugin</artifactId>
@@ -433,26 +433,7 @@
                                 <type>jar</type>
                             </dependency>
                         </dependencies>
-                    </plugin> -->
-
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>cobertura-it-maven-plugin</artifactId>
-                        <configuration>
-                            <formats>
-                                <format>html</format>
-                                <format>xml</format>
-                            </formats>
-                        </configuration>
-                        <reportSets>
-                            <reportSet>
-                                <reports>
-                                    <report>report-only</report>
-                                </reports>
-                            </reportSet>
-                        </reportSets>
                     </plugin>
-                    <!--
                     <plugin>
                         <artifactId>maven-antrun-plugin</artifactId>
                         <dependencies>
@@ -483,7 +464,6 @@
                             </execution>
                         </executions>
                     </plugin>
-                    -->
                 </plugins>
             </build>
         </profile>
