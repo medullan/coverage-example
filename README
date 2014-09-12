@@ -3,6 +3,7 @@ Needs:
 	* java
 	* jetty maven plugin
 	* cobertura maven plugin
+	* robot framework maven plugin
 
 To build and skip unit tests
 	mvn clean verify -Dskip.unit.tests
