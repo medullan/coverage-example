@@ -453,7 +453,7 @@
                                         <taskdef classpathref="maven.runtime.classpath"
                                                  resource="tasks.properties" />
                                         <mkdir dir="${project.build.directory}/site/cobertura" />
-                                        <cobertura-report format="html"
+                                        <cobertura-report format="xml"
                                                           datafile="${project.build.directory}/cobertura/cobertura.ser"
                                                           destdir="${project.build.directory}/site/cobertura"
                                                           srcdir="${project.basedir}/src/main/java" />
