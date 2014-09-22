@@ -1,18 +1,18 @@
 
 Needs:
-	* Java
-	* Tomcat
-	* Eclipse & Sysdeo Tomcat plugin
+	* java
+	* jetty maven plugin
+	* cobertura maven plugin
+	* robot framework maven plugin
 
-To build
-	mvn clean install
-	
-To create eclipse project files
-	mvn sysdeo-tomcat:generate
+To build and skip unit tests
+	mvn clean verify -Dskip.unit.tests
 
-To generate coverage report
-	mvn clean install -Pwith-emma
-	(windows)	java -cp %USERPROFILE%/.m2/repository/emma/emma/2.0.5312/emma-2.0.5312.jar emma report -r xml,html -in coverage.ec -in target/coverage.em
-	(linux)		java -cp ~/.m2/repository/emma/emma/2.0.5312/emma-2.0.5312.jar emma report -r xml,html -in coverage.ec -in target/coverage.em
-	
-	
+To build and skip integration tests
+	mvn clean verify -Dskip.integration.tests
+
+To generate coverage report with cobertura for robot functional tests
+	mvn clean verify -Pwith-robot -Pwith-jetty -Pcobertura
+
+Coverage report will be generated a xml in the target/site/cobertura folder
+Robot functional test results will be written to target/robotframework-reports folder
