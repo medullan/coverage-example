@@ -1,0 +1,31 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.example'
+version = '1.0-SNAPSHOT'
+
+description = """helloworld Maven Webapp"""
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+
+
+
+repositories {
+        
+     maven { url "https://cpci.carepass.com:8443/nexus/content/repositories/aetna" }
+     maven { url "https://github.com/AetnaCarePass/MavenRepo/raw/master/snapshots" }
+     maven { url "file:/projects/MavenRepo/releases" }
+     maven { url "http://repo.springsource.org/release" }
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile group: 'org.springframework', name: 'spring', version:'2.5.6'
+    compile group: 'org.springframework', name: 'spring-webmvc', version:'2.5.6'
+    compile group: 'org.springframework', name: 'spring-test', version:'2.5.6'
+    compile group: 'taglibs', name: 'standard', version:'1.1.2'
+    compile group: 'javax.servlet', name: 'jstl', version:'1.1.2'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-server', version:'2.40.0'
+    testCompile group: 'junit', name: 'junit', version:'4.4'
+    providedCompile group: 'javax.servlet', name: 'servlet-api', version:'2.5'
+}
